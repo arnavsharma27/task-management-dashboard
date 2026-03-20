@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/ConfirmDialog.tsx","./src/components/FiltersBar.tsx","./src/components/TaskCards.tsx","./src/components/TaskFormDialog.tsx","./src/components/TaskList.tsx","./src/domain/storage.ts","./src/domain/types.ts"],"version":"5.9.3"}

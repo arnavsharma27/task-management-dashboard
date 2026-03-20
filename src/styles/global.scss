@@ -1,0 +1,19 @@
+.homePageWrapper{
+  .homePageContainer{
+    .homePageValue{
+      // Page spacing helpers if needed
+      &.isEmpty{
+        opacity: .64;
+      }
+    }
+  }
+}
+
+// Additional utilities for responsive spacing specific to this app
+.taskDashboard{
+  .sectionTitle{
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+}
+
