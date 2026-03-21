@@ -1,0 +1,10 @@
+.homePageWrapper{
+  .homePageContainer{
+    .homePageValue{
+      &.isEmpty{
+        opacity: .64;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,14 @@
+.taskListRoot{
+  .taskListItem{
+    &.taskListItemMobile{
+      @media (max-width: 600px){
+        &.MuiListItem-root.MuiListItem-gutters.MuiListItem-padding{
+          padding-top: 0 !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+    }
+  }
+}
+

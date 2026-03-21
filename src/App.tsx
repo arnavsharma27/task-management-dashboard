@@ -6,7 +6,7 @@ import ViewListIcon from '@mui/icons-material/ViewList';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import AddIcon from '@mui/icons-material/Add';
 import './index.css';
-import './styles/global.scss';
+import './styles/App.scss';
 import { Task, TaskDraft, TaskStatus } from './domain/types';
 import { loadTasks, saveTasks } from './domain/storage';
 import { TaskFormDialog } from './components/TaskFormDialog';
@@ -139,12 +139,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="homePageWrapper">
-        <AppBar position="fixed" color="primary" elevation={1}>
-          <Toolbar>
-            <Typography variant="h6" sx={{ flexGrow: 1 }}>
+        <AppBar position="static" color="primary" elevation={1}>
+          <Toolbar sx={{ pt: '16px', pb: { xs: 1, sm: 0 }, flexWrap: { xs: 'wrap', sm: 'nowrap' }, rowGap: { xs: 1, sm: 0 } }}>
+            <Typography variant="h6" sx={{ flexGrow: 1, width: { xs: '100%', sm: 'auto' } }}>
               Task Dashboard
             </Typography>
-            <Stack direction="row" spacing={1} alignItems="center">
+            <Stack direction="row" spacing={{ xs: 0.5, sm: 1 }} alignItems="center" sx={{ width: { xs: '100%', sm: 'auto' }, justifyContent: { xs: 'space-between', sm: 'flex-end' } }}>
               <Tooltip title={darkMode ? 'Light mode' : 'Dark mode'}>
                 <IconButton color="inherit" onClick={() => setDarkMode(v => !v)} aria-label="toggle theme">
                   {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
@@ -160,13 +160,26 @@ function App() {
                   <ViewModuleIcon />
                 </IconButton>
               </Tooltip>
-              <Button startIcon={<AddIcon />} color="inherit" variant="outlined" onClick={() => setFormOpen(true)}>
-                New Task
+              <Button
+                startIcon={<AddIcon />}
+                color="inherit"
+                variant="outlined"
+                onClick={() => setFormOpen(true)}
+                sx={{
+                  borderRadius: '999px',
+                  minWidth: { xs: 40, sm: 110 },
+                  height: { xs: 36, sm: 40 },
+                  px: { xs: 1, sm: 2 },
+                  '& .MuiButton-startIcon': {
+                    margin: { xs: 0, sm: '0 8px 0 -4px' }
+                  }
+                }}
+              >
+                <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>New Task</Box>
               </Button>
             </Stack>
           </Toolbar>
         </AppBar>
-        <Toolbar />
         <Container
           className="homePageContainer"
           maxWidth={false}

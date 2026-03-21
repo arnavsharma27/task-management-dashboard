@@ -1,0 +1,23 @@
+.filtersBarWrapper{
+  .filtersBarStatusGroup,
+  .filtersBarPriorityGroup{
+    @media (max-width: 600px){
+      width: 100%;
+    }
+  }
+
+  .filtersBarStatusGroup{
+    @media (max-width: 600px){
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+
+      .MuiToggleButton-root{
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+

@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardActions, Typography, IconButton, Chi
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Task } from '../domain/types';
+import '../styles/TaskCards.scss';
 
 export function TaskCards(props: {
   tasks: Task[];
@@ -11,13 +12,13 @@ export function TaskCards(props: {
 }) {
   const { tasks, onEdit, onDelete, onToggleStatus } = props;
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} className="taskCardsGrid">
       {tasks.map(task => {
         const chipColor =
           task.priority === 'high' ? 'error' : task.priority === 'medium' ? 'warning' : 'default';
         return (
           <Grid key={task.id} size={{ xs: 12, sm: 6, md: 4 }}>
-            <Card variant="outlined" sx={task.status === 'completed' ? { opacity: 0.8 } : undefined}>
+            <Card className="taskCardItem" variant="outlined" sx={task.status === 'completed' ? { opacity: 0.8 } : undefined}>
               <CardHeader
                 title={
                   <Stack direction="row" spacing={1} alignItems="center">
