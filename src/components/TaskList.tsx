@@ -146,7 +146,19 @@ function SortableTaskItem(props: {
     >
       <Stack direction="row" alignItems="flex-start" sx={{ width: '100%' }}>
         <Tooltip title="Drag to reorder">
-          <IconButton size="small" {...attributes} {...listeners} sx={{ mr: 0.5, cursor: 'grab', mt: 0.5 }}>
+          <IconButton
+            size="small"
+            {...attributes}
+            {...listeners}
+            sx={{
+              mr: 0.5,
+              cursor: 'grab',
+              mt: 0.5,
+              touchAction: 'none',
+              width: 36,
+              height: 36
+            }}
+          >
             <DragIndicatorIcon fontSize="small" />
           </IconButton>
         </Tooltip>
